@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//XXX neg?
+//XXX negative int?
 int inline my_div_ceil(int d, int q)
 {
 	int s = d/q, r = d%q;
@@ -36,10 +36,10 @@ double median_search(int a[], int l, int b[], int m, int left, int right)
 	cout << "i=" << i << ", j=" << j << endl;
 
 	if ((j == 0 || a[i] >= b[j]) && (j == m || a[i] <= b[j+1])) {
-		if (n%2 == 1) {
+		if (n%2 == 1) { // only one median
 			cout << "m:" << a[i] << endl;
 			return (double)a[i];
-		} else { // two median, get successor of a[i]
+		} else { // two medians, get successor of the smaller median a[i]
 			int m2;
 			if (i+1 <= l && j+1 <= m)
 				m2 = min(a[i+1], b[j+1]);
